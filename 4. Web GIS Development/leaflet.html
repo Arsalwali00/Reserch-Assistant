@@ -1,0 +1,42 @@
+<!-- Leaflet is one of the most popular and widely used open-source JavaScript libraries for creating interactive maps on the web. It's known for being lightweight, mobile-friendly, and easy to use, making it a great choice for developers looking to integrate maps into their web applications. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Map Example</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <style>
+    #map { height: 400px; }
+  </style>
+</head>
+<body>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<script>
+  // Initialize the map and set its view to a specific location
+  var map = L.map('map').setView([51.505, -0.09], 13);
+
+  // Add a tile layer (map background)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Add a marker to the map
+  var marker = L.marker([51.5, -0.09]).addTo(map);
+
+  // Add a popup to the marker
+  marker.bindPopup("<b>Hello Gilgit!</b><br>There is a high level Glaicer risk.").openPopup();
+</script>
+
+</body>
+</html>
+
+<!-- Explanation of the Code:
+L.map('map').setView([51.505, -0.09], 13);: Initializes the map centered at latitude 51.505 and longitude -0.09 with a zoom level of 13.
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {...}): Adds OpenStreetMap tiles to the map.
+L.marker([51.5, -0.09]).addTo(map);: Adds a marker at the specified coordinates.
+marker.bindPopup("<b>Hello world!</b><br>This is a popup.");: Binds a popup to the marker, which opens when the marker is clicked. -->
